@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>OMDb: Ratings,Reviews And Where to Watch the Best Movies</title>
+    <link rel="icon" href="./images/Logo.jpg">
+	<!-- Import free Google fonts -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:700&text=OMDb&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700&display=swap">
+	<!-- Fontawesome BootstrapCDN -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css" rel="stylesheet">
+	<!-- My Stylesheet -->
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<!-- The main wrapper for all content -->
+	<div id="main" class="main">
+		<nav>
+			<div class="logo">
+				<span>OMDb</span>
+			</div>
+
+			<div class="navbar">
+
+				<div class="nav-top">
+					<form class="search-form" action="">
+						<input type="search" name="search-box" id="search-box" placeholder="Find Movies, TV Shows and more...">
+						<select name="search-type" id="search-type">
+							<option value="all">All</option>
+							<option value="titles">Titles</option>
+							<option value="episode">TV Episodes</option>
+							<option value="series">Series</option>
+							<option value="imdbs">IMDb IDs</option>
+							<option value="advsearch">AdvancedSearch>></option>
+						</select>
+						<button type="submit" id="search-start">
+							<i class="fas fa-search"></i>
+						</button>
+					</form> <!-- search-form -->
+
+					<div class="nav-top-other">
+						<span>OMDbPro</span>
+						<a href="#">HELP</a>
+						<div class="socials">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-twitch"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-youtube"></i></a>
+						</div> <!-- socials -->
+					</div> <!-- nav-top-other -->
+				</div> <!-- nav-top -->
+
+				<div class="nav-btm">
+					<div class="nav-drops">
+						<div class="v-spacer">.</div>
+						<div id="movies-tv-episodes" class="nav-drop nav-drop-1">
+							<button class="dropbtn">Movies, TV & Episodes
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="dropdown drop-1">
+								<div class="dropdown-text">
+									<h5>Movies</h5>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+									<h5>TV Show</h5>
+									<ul>
+										<li></li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+								<div class="dropdown-text">
+										<h5>Show</h5>
+										<ul>
+											<li></li>
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+								</div>
+								<div class="dropdown-img" id="random-movie">
+									<img src="" alt="" id="random-movie-img">
+									<div id="random-movie-footer">
+										<a href="#" id="random-movie-title"></a>
+										<a href="#" id="random-movie-rating"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="v-spacer">.</div>
+						<div id="celebs-events-photos" class="nav-drop nav-drop-2">
+							<button class="dropbtn">Celebs, Events & Photos
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="dropdown drop-2">
+								<h5>Celebs</h5>
+								<h5>Events</h5>
+								<h5>Photos</h5>
+							</div>
+						</div>
+						<div class="v-spacer">.</div>
+						<div id="news-community" class="nav-drop nav-drop-3">
+							<button class="dropbtn">News & Community
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="dropdown drop-3">
+								<h5>News</h5>
+								<h5>Community</h5>
+							</div>
+						</div>
+						<div class="v-spacer">.</div>
+						<div id="watchlist" class="nav-drop nav-drop-4">
+							<button class="dropbtn">Watchlist
+								<i class="fa fa-caret-down"></i>
+							</button>
+							<div class="dropdown drop-4">
+								<h5>Watchlist</h5>
+							</div>
+						</div>
+						<div class="v-spacer">.</div>
+					</div> <!-- nav-drops -->
+
+					<button class="sign-in">Sign in</button>
+				</div> <!-- nav-btm -->
+
+			</div> <!-- navbar -->
+
+		</nav> <!-- nav -->
+
+		<!-- This contains some information before the user has sublitted a search -->
+		<div id="startup"></div>
+
+		<!-- This gets populated after the user has commited the search -->
+		<div id="results"></div>
+
+		<!-- The list of search results that pops up as soon as some results came back -->
+		<div id="realtime-search" class="realtime-search hidden"></div>
+
+		<!-- main  -->
+
+		<!-- latest movie box -->
+        <div class="latest-update">
+            <div class="slides fade">
+                <img src="./images/poster1.png" width="100%" height="453px">
+            </div>
+            <div class="slides fade" style="">
+                <img src="./images/poster3.webp" width="100%" height="453px">
+            </div>
+            <div class="slides fade">
+                <img src="./images/poster4.jpg" width="100%" height="453px">
+            </div>
+            <div class="slides fade">
+                <img src="./images/165212342_akhil-akkineni-agent-new-poster_1280_720.jpg" width="100%" height="453px">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <br>
+
+		<!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+		<!-- Top 10 movies box  -->
+        <h2 style="color: white" id="heading">Top 10 on IMDb this week</h2></div>
+            <div class="top10-container">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="cards">
+                        <div>
+                            <img src="./images/Mov1.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.4</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 1. Joker</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/poster 2.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.8</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 2. Skyfall</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov3.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.2</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 3. Gone With The Wind</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov4.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.0</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 4. Guardian of the Galaxy</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>                    
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov5.jpeg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.4</p>
+                        <br>
+                        <p class="card-title" style="color: white">5. Looper</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov6.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.2</p>
+                        <br>
+                        <p class="card-title" style="color: white">6. The Sucide Squad</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov7.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 6.8</p>
+                        <br>
+                        <p class="card-title" style="color: white">7. Aquaman</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov8.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.8</p>
+                        <br>
+                        <p class="card-title" style="color: white">8. Shootout</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov9.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.2</p>
+                        <br>
+                        <p class="card-title" style="color: white">9. Rebel Moon</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov10.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.4</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 10. Extraction</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+			<br><br>
+            <h2 style="color: white" id="heading">Recently Viewed</h2></div>
+            <div class="top10-container">
+                <div class="card-wrapper swiper-wrapper">
+                    <div class="cards">
+                        <div>
+                            <img src="./images/Mov1.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.4</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 1. Joker</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/poster 2.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.8</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 2. Skyfall</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov3.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.2</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 3. Gone With The Wind</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov4.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.0</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 4. Guardian of the Galaxy</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>                    
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov5.jpeg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.4</p>
+                        <br>
+                        <p class="card-title" style="color: white">5. Looper</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov6.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.2</p>
+                        <br>
+                        <p class="card-title" style="color: white">6. The Sucide Squad</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov7.webp" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 6.8</p>
+                        <br>
+                        <p class="card-title" style="color: white">7. Aquaman</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov8.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 7.8</p>
+                        <br>
+                        <p class="card-title" style="color: white">8. Shootout</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov9.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.2</p>
+                        <br>
+                        <p class="card-title" style="color: white">9. Rebel Moon</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                    <div class="cards">
+                        <div>
+                            <img src="./images/mov10.jpg" alt="movie" class="image-box" width="169px" height="267px">
+                        </div>
+                        <p class="star" style="color: white"><i class="fa-sharp fa-solid fa-star" style="color: #dba506;"></i> 8.4</p>
+                        <br>
+                        <p class="card-title" style="color: white"> 10. Extraction</p>
+                        <div class="watch-btn">                        
+                            <button class="watch" style="width: 90%;"><i class="fa-sharp fa-solid fa-play"></i> Watch option</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br><br><br>
+		<footer>
+			<div class="footer-infos">
+				<div class="btm-mobile">
+					<h3>OMDb Everywhere!</h3>
+					<img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred.png" alt="AppStore Logo">
+					<img src="https://play.google.com/intl/en_us/badges/images/badge_new.png" alt="Google Play logo">
+					<img src="" alt="">
+					<p>Find showtimes, watch trailers, browse photos, track your Watchlist and rate your favorite movies and TV shows on your phone or tablet!</p>
+				</div>
+				<div class="btm-socials">
+					<h3>Follow OMDb on</h3>
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-twitch"></i></a>
+					<a href="#"><i class="fab fa-twitter"></i></a>
+					<a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+				<div class="btm-links">
+					<a href="#" target="_blank" rel="noopener noreferrer">Home</a>
+					<a href="#" target="_blank" rel="noopener noreferrer">Top Rated Movies</a>
+					<a href="#" target="_blank" rel="noopener noreferrer">Box Office</a>
+					<a href="#" target="_blank" rel="noopener noreferrer">Coming Soon</a>
+					<a href="#" target="_blank" rel="noopener noreferrer">Site Index</a>
+					<a href="#" target="_blank" rel="noopener noreferrer">In Theaters</a>
+				</div>
+			</div> <!-- footer-infos-->
+
+			<div class="copyrights">
+				<p>No Copyrights! Made as an exercise by <a href="https://github.com/Ashutoshanand1207">Ashutosh Kumar</a></p>
+				<p>All credits for API go to <a href="http://www.omdbapi.com/">OMDb API</a> licenced under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0.</a></p>
+				<p>This site is not endorsed by or affiliated with <a href="https://www.imdb.com/">IMDb.com</a> or <a href="http://www.omdbapi.com/">OMDb API.com</a>.</p>
+			</div>
+		</footer>
+	</div> 
+	<script src="app.js"></script>
+</body>
+</html>
